@@ -36,7 +36,7 @@ export async function getTokenMap(): Promise<BlockchainMapping> {
   const getCachedTokenMap = unstable_cache(
     async () => {
       console.log("Loading TokenMap...");
-      return loadTokenMap(getEnvVar("TOKEN_MAP_URL"));
+      return loadTokenMap();
     },
     ["token-map"], // cache key
     {
